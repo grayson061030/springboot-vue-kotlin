@@ -1,31 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Todos />
+    <footer class="info">
+      <p>Based on a project written by <a href="http://evanyou.me">Evan You</a></p>
+      <p>Original Vue TodoApp project is <a href="https://vuejs.org/v2/examples/todomvc.html">here</a></p>
+      <p>Modified for this tutorial by Andrew Hughes</p>
+    </footer>
   </div>
 </template>
 
+<script>
+  import Todos from './components/Todos'
+  // app Vue instance
+  const app = {
+    name: 'app',
+    components: {
+      Todos
+    },
+    // app initial state
+    data: () => {
+      return {
+      }
+    }
+  }
+
+  export default app
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  [v-cloak] { display: none; }
 </style>

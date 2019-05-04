@@ -60,6 +60,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### server 
 * make build (executable jar in gradle)
-> gradle bootjar
-> java -jar build/libs/kboot-0.0.1-SNAPSHOT.jar
+```json
+gradle bootjar
+java -jar build/libs/kboot-0.0.1-SNAPSHOT.jar
+
+```
+
 

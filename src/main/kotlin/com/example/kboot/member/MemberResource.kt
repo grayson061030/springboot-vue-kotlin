@@ -24,7 +24,11 @@ class MemberResource {
     }
 
     @PostMapping
-    fun create(@RequestBody member: MemberDto) = memberService.save(member)
+    fun create(@RequestBody member: MemberDto) :ResponseEntity<MemberDto?> {
+        val memberDto = memberService.save(member)
+        val status = if (memberDto == null) HttpStatus.BAD_REQUEST else HttpStatus.OK
+        return ResponseEntity(memberDto,status)
+    }
 
     @PutMapping("{seq}")
     fun update(@PathVariable seq: Long, @RequestBody member: MemberDto) = memberService.update(seq, member)

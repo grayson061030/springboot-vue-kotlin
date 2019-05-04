@@ -40,7 +40,7 @@ data class Member(
                 firstName = dto.firstName,
                 lastName = dto.lastName,
                 age = dto.age,
-                email = dto.email
+                email = dto.email!!
         )
 
         fun fromDto(updateMemberDto: MemberDto, currentMember: Member) = Member(
@@ -48,7 +48,7 @@ data class Member(
                 firstName = updateMemberDto.firstName,
                 lastName = updateMemberDto.lastName,
                 age = updateMemberDto.age,
-                email = updateMemberDto.email
+                email = updateMemberDto.email!!
         )
     }
 

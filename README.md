@@ -66,4 +66,11 @@ java -jar build/libs/kboot-0.0.1-SNAPSHOT.jar
 
 ```
 
+### docker
+ref [docker build](https://www.neilghosh.com/2019/02/quick-microservice-with-gradle-spring.html) 
+* create docker image: docker build . -t kboot-app
+* run docker image: docker run -p 8090:8090 kboot-app:latest
+* check your browser: http://localhost:8090
+
+
 

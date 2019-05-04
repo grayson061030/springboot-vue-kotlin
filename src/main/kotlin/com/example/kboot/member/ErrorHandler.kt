@@ -15,4 +15,9 @@ class ErrorHandler {
     fun JsonParseExceptionHandler(servletRequest:HttpServletRequest, exception: Exception):ResponseEntity<ErrorResponse> {
         return ResponseEntity(ErrorResponse("Json Error!!!!",exception.message ?: "invalid json"),HttpStatus.BAD_REQUEST)
     }
+
+    @ExceptionHandler(MemberNotFoundException::class)
+    fun memberNotFoundExceptionHandler(servletRequest:HttpServletRequest, exception: Exception):ResponseEntity<ErrorResponse> {
+        return ResponseEntity(ErrorResponse("Member not found ",exception.message!!), HttpStatus.BAD_REQUEST)
+    }
 }

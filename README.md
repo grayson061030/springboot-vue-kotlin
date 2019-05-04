@@ -57,3 +57,9 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 * [springboot+vue config ref] (https://velog.io/@juan003/2019-01-25-1001-%EC%9E%91%EC%84%B1%EB%90%A8-9djrbeb13c)
+
+## server 
+> make build (executable jar in gradle)
+> > gradle bootjar
+> >  java -jar build/libs/kboot-0.0.1-SNAPSHOT.jar
+

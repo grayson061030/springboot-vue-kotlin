@@ -13,8 +13,8 @@ class MemberService {
     fun findByName(name: String) = memberRepository.findByFirstNameOrLastName(name, name)
     fun save(memberDto: MemberDto): MemberDto = memberRepository.save(Member.fromDto(memberDto)).toDto()
     fun findBySeq(seq:Long): MemberDto? {
-        val member:Member = memberRepository.findById(seq).orElse(null)
-        if (member == null ) return null else return member.toDto()
+        val member = memberRepository.findById(seq)
+        if (member.isPresent) return member.get().toDto() else return null
     }
     fun update(seq: Long, updateMemberDto: MemberDto): MemberDto? {
         val currentMember = memberRepository.findById(seq)

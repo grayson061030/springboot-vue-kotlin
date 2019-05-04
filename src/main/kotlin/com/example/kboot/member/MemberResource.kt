@@ -30,6 +30,12 @@ class MemberResource {
         return ResponseEntity(memberDto,status)
     }
 
+    @GetMapping("{seq}")
+    fun getMember(@PathVariable seq:Long):ResponseEntity<MemberDto> {
+        val member = memberService.findBySeq(seq) ?: throw MemberNotFoundException("member '$seq' not found")
+        return ResponseEntity(member,HttpStatus.OK)
+    }
+
     @PutMapping("{seq}")
     fun update(@PathVariable seq: Long, @RequestBody member: MemberDto) = memberService.update(seq, member)
 
